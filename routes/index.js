@@ -3,7 +3,7 @@ var bcrypt = require ('bcryptjs') ;
 var mongoose = require('mongoose');
 var sess;
 // Mongoose connection to MongoDB
-mongoose.connect('mongodb://localhost:27017/db_Mapping', function (error) {
+mongoose.connect('mongodb://172.30.24.187:27017/db_Mapping', function (error) {
     if (error) {
         console.log(error);
     }
