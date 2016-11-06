@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var path = require('path');
 var routes=require('./routes');
-var port=3000;
+var port=8080;
 app.use(express.static(path.join(__dirname, '/public')));
 
 // parse application/json
