@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        title #{title}
+        meta(name='viewport', content='initial-scale=1,maximum-scale=1,user-scalable=no')
+    body
+        div#login(class='ficheForm')
+            div(class='formContent')
+                h3 CREE TON COMPTE
+                form(id='formLogin', action='/sign',method='post')
+                    label(class='_sp_class_label', for='username') username: 
+                    input(class='inputForm', id='username', name='username', type='text', value='')
+                    br
+                    label(class='_sp_class_label', for='password') password: 
+                    input(class='inputForm', id='password', name='password', type='password', value='')
+                    br
+                    input(class='inputForm', id='submit_login', type='submit', value='Enregistrer')
+        br
+        div#result

@@ -1,0 +1,19 @@
+{
+  "name": "emt_carto",
+  "version": "1.0.0",
+  "description": "application de stockage de cartographies ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Guillaume CANU",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+	"express-session":"^1.14.2",
+	"body-parser":"^1.15.2",
+    "jade": "^1.11.0",
+    "mongodb": "^2.2.10",
+    "mongoose": "^4.6.3"
+  }
+}

@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        title #{title}
+        meta(name='viewport', content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+        link(rel='stylesheet', href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css')
+        link(rel='stylesheet', href='/soccerPitchTeamEditionV1.0.1/soccerPitch.css')
+        script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js')
+        script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js') 
+        script(src='soccerPitchTeamEditionV1.0.1/soccerPitch.js') 
+        script(src='soccerPitchTeamEditionV1.0.1/jscolor.js') 
+        script(type="text/javascript").
+            window.onload=function () {
+                var pitch=null;
+                var properties={
+                                                            //Largeur de l'image representant le terrain (en pixels)
+                            //rateHW: 1.3,              					//rapport Hauteur(Longueur)/largeur du terrain
+                            user:'#{user}',                                            //==> hauteur=width*rateHW
+                            widthIRL:60,              					//Largeur standard et reelle du terrain en m 
+                                                                        //==> permet de recreer l'echelle
+                            playerSize:16,								//Taille des joueurs en px			 
+                                                                        //Types possibles de representation:
+                            type: fullPitch,						    //halfPitch		  :  1 demi-terrain, 
+                                                                        //fullPitch :  1 grand terrain 
+                            textStyle:"Bold italic 11px Verdana",
+                            grassStripesNumber:19,					
+                            sheetName:'#{sheetName}'
+                            };
+                
+                pitch=new soccerPitch(properties);
+                pitch.draw();
+                pitch.loadData();
+                pitch.getSheets();
+                //alors c toi
+            }
+    body

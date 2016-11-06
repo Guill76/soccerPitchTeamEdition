@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>foot_pitch</title>
+<link rel="stylesheet" type="text/css" href="soccerPitch.css" media="all"/>
+<style>
+#rule {
+    position: absolute;
+	top: 8px;
+    left: 300px;
+    width: 300px;
+    text-align: center;
+	font-family: verdana;
+	font-size: 13px;
+    border: 3px solid #73AD21;
+}
+
+#cnv1 {
+	position: absolute;
+	top: 8px;
+	left: 10px;
+	width: 300px;
+	z-index: 100;
+}
+
+#cnv2 {
+	position: absolute;
+	top: 8px;
+	left: 610px;
+	width: 300px;
+}
+
+#cnv3 {
+	position: absolute;
+	top: 8px;
+	left: 1220px;
+	width: 300px;
+}
+#cnv4 {
+	position: absolute;
+	top: 8px;
+	left: 920px;
+	width: 300px;
+}
+
+#contentrule {
+	text-align: left;
+	font-size: 11px;
+}
+span.obj {
+	font-weight: bold;
+	font-size: 13px;
+}
+
+span.imp {
+	font-weight: italic;
+	font-size: 11px;
+	color:red;
+}
+</style>
+<script type="text/javascript" src="soccerPitch.js"> </script>
+<script type="text/javascript">
+
+    window.onload = function() {
+		var pitch=new soccerPitch({
+						id: 'canvas',
+						renderImgId:'rendu',
+						width: 200,               					//Largeur de l'image representant le terrain (en pixels)
+						rateHW: 1.5,              					//rapport Hauteur(Longueur)/largeur du terrain
+																	//==> hauteur=width*rateHW
+						widthIRL:60,              					//Largeur standard et reelle du terrain en m 
+																	//==> permet de recreer l'echelle
+						playerSize:10,								//Taille des joueurs en px			 
+						lineWidth: 2,             					//Epaisseur des traits en px
+						grassColor1: "#088A08" ,  					//couleur de tonte 1 "#088A08"
+						grassColor2: "#04B404",   					//couleur de tonte 2 "#04B404"
+																	
+						shadow: true,           					//Ombre des joueurs: true ou false
+						textStyle: "Bold italic 10px Verdana",  	//style texte incrusté(nom)
+						top:{x: 20,y:20},         					//permet de dessiner un cadre exterieur : 0,0 pour supprimer le cadre
+						cornerRadius:1,		  	  					//rayon des quarts de cercle du pt de corner en metres
+						//direction:up, 							//orientation du 1/2 terrain important si aucune equipe (aucun interet sinon calculé)
+																	//Types possibles de representation:
+						type: fullPitch,						    //halfPitch		  :  1 demi-terrain, 
+																	//fullPitch :  1 grand terrain 
+						teams: [new team({direction: up,			//ajout de 2 equipes sur le terrain
+										teamColor: '#2E64FE',			
+										textColor: 'white'}), 
+								new team({direction: down,
+										teamColor: '#B40404',
+										textColor:'gold'})],
+						configMenu: false
+							});	
+		pitch.draw();
+		document.getElementById("raz").addEventListener("click",function() { pitch.raz();} );
+		document.getElementById("DataURL").addEventListener("click",function() { pitch.toDataUrl();} );
+		document.getElementById("drgDrp").addEventListener("click",function() { pitch.switchModeDragNDrop();} );
+		
+		var pitch2=new soccerPitch({
+						id: 'canvas2',
+						renderImgId:'rendu2',
+						width: 200,               					//Largeur de l'image representant le terrain (en pixels)
+						rateHW: 1.5,              					//rapport Hauteur(Longueur)/largeur du terrain
+																	//==> hauteur=width*rateHW
+						widthIRL:60,              					//Largeur standard et reelle du terrain en m 
+																	//==> permet de recreer l'echelle
+						playerSize:10,								//Taille des joueurs en px			 
+						lineWidth: 2,             					//Epaisseur des traits en px
+						grassColor1: "#088A08" ,  					//couleur de tonte 1 "#088A08"
+						grassColor2: "#04B404",   					//couleur de tonte 2 "#04B404"
+						shadow: true,           					//Ombre des joueurs: true ou false
+						textStyle: "Bold italic 10px Verdana",   	//style texte incrusté(nom)
+						top:{x: 20,y:20},         					//permet de dessiner un cadre exterieur : 0,0 pour supprimer le cadre
+						cornerRadius:1,		  	  					//rayon des quarts de cercle du pt de corner en metres
+						type: halfPitch,		
+						teams: [new team({direction: up,			//ajout des equipes sur le terrain
+										teamColor: 'blue',			//l'orientation de l'equipe sera prioritaire     
+										textColor: 'red'})],
+						configMenu: false			
+																	//dans le cas d'un demi terrain  
+							});	
+		pitch2.draw();
+		document.getElementById("raz2").addEventListener("click",function() { pitch2.raz();} );
+		document.getElementById("DataURL2").addEventListener("click",function() { pitch2.toDataUrl();} );
+			
+		var pitch3=new soccerPitch({
+							id: 'canvas3',
+							renderImgId:'rendu3',
+							width: 200,               				//Largeur de l'image representant le terrain (en pixels)
+							rateHW: 1.5,              				//rapport Hauteur(Longueur)/largeur du terrain
+																	//==> hauteur=width*rateHW
+							widthIRL:60,              				//Largeur standard et reelle du terrain en m 
+																	//==> permet de recreer l'echelle
+							playerSize:12,							//Taille des joueurs en px			 
+							lineWidth: 3,             				//Epaisseur des traits en px
+							grassColor1: "#088A08" ,  				//couleur de tonte 1 "#088A08"
+							grassColor2: "#04B404",   				//couleur de tonte 2 "#04B404"
+							shadow: true,           				//Ombre des joueurs: true ou false
+							textStyle: "Bold italic 12px Verdana",	//style texte incrusté(nom)
+							top:{x: 20,y:20},         				//permet de dessiner un cadre exterieur : 0,0 pour supprimer le cadre
+							cornerRadius:1,		  	  				//rayon des quarts de cercle du pt de corner en metres
+							type: fullPitch,	
+							teams: [new team({direction: down,		//ajout des equipes sur le terrain
+											teamColor: 'orange',		    
+											textColor: 'black'})],
+							configMenu: false			
+							});	
+		pitch3.draw();
+		document.getElementById("raz3").addEventListener("click",function() { pitch3.raz();} );
+		document.getElementById("DataURL3").addEventListener("click",function() { pitch3.toDataUrl();} );
+		
+		var pitch4=new soccerPitch({
+						id: 'canvas4',
+						renderImgId:'rendu4',
+						width: 200,               					//Largeur de l'interieur representant le terrain (en pixels)
+						rateHW: 1.5,              					//rapport Hauteur(Longueur)/largeur du terrain
+																	//==> hauteur=width*rateHW
+						widthIRL:60,              					//Largeur standard et reelle du terrain en m 
+																	//==> permet de recreer l'echelle
+						playerSize:10,								//Taille des joueurs en px			 
+						lineWidth: 2,             					//Epaisseur des traits en px
+						grassColor1: "#088A08" ,  					//couleur de tonte 1 "#088A08"
+						grassColor2: "#04B404",   					//couleur de tonte 2 "#04B404"
+						shadow: true,           					//Ombre des joueurs: true ou false
+						textStyle: "Bold italic 10px Verdana",   		//style texte incrusté(nom)
+						top:{x: 20,y:20},         					//permet de dessiner un cadre exterieur : 0,0 pour supprimer le cadre
+						cornerRadius:1,		  	  					//rayon des quarts de cercle du pt de corner en metres
+						type: halfPitch,		
+						teams: [new team({direction: down,			//ajout des equipes sur le terrain
+										teamColor: 'white',			    
+										textColor: 'blue'})],
+						configMenu: false						    
+							});	
+		pitch4.draw();
+		document.getElementById("raz4").addEventListener("click",function() { pitch4.raz();} );
+		document.getElementById("DataURL4").addEventListener("click",function() { pitch4.toDataUrl();} );
+		
+	}
+	
+ </script>
+ </head>
+ <body>
+   <div id="cnv1">
+   <span class="obj"> Exemple 1 / type terrain complet(fullPitch) 2 Equipes</span>
+   <canvas id="canvas"></canvas>
+   <input id="drgDrp" type="button" value="Activ./Desactiv. Deplacmts"><input id="DataURL" type="button" value="Afficher Image base 64"><input id="raz" type="button" value="RAZ"><img id="rendu" src="" alt="Votre Compo">
+   </div>
+   <div id="cnv2">
+   <span class="obj"> Exemple 2 / type demi terrain(halfPitch) 1 Equipe vers le haut</span>
+   <canvas id="canvas2"></canvas>
+   <input id="raz2" type="button" value="RAZ"><input id="DataURL2" type="button" value="Afficher Image base 64"><img id="rendu2" src="" alt="Votre Compo">
+   </div>
+   <div id="cnv3">
+   <span class="obj"> Exemple 3 / type terrain complet(fullPitch) 1 Equipe vers le bas</span>
+   <canvas id="canvas3"></canvas>
+   <input id="raz3" type="button" value="RAZ"><input id="DataURL3" type="button" value="Afficher Image base 64"><img id="rendu3" src="" alt="Votre Compo">
+   </div>
+   <div id="cnv4">
+   <span class="obj"> Exemple 4 / type demi terrain(halfPitch) 1 Equipe vers le bas</span>
+   <canvas id="canvas4"></canvas>
+   <input id="raz4" type="button" value="RAZ"><input id="DataURL4" type="button" value="Afficher Image base 64"><img id="rendu4" src="" alt="Votre Compo">
+   </div>
+ 
+<div id="rule" >
+<span class="obj">Comment ca marche?</span> 
+<div id="contentrule">
+<ul>
+	<li><span class="obj">Simple clic :</span> Ajouter un joueur <br> <span class="imp"> un joueur ne peut etre ajoute que si la distance avec un joueur deja present est superieure a 3m convertie en pixel(pour avoir une idee - la largeur du but est 7,3m), le nombre max de joueurs est fixe a 11</span></li>
+	<li><span class="obj">drag&drop:</span> Deplacer un joueur si mode drag & drop est actif (clic sur bouton "activer / desactiver deplacements..") <br><span class="imp"> 1 conseil: Mieux vaut desactiver de drag & drop une fois le joueur en place: car cela prend beaucoup de ressources</span> </li>
+	
+	<li><span class="obj">clic droit :</span> Supprimer un joueur <br> <span class="imp"> Le premier joueur a moins de 3m (converti en pixel)du clic sera supprime</span></li>
+	<li><span class="obj">Double clic :</span> Ajouter/modifier le texte sur 1 joueur puis Entree pour valider</li>
+	<li><span class="obj">Afficher image base 64 :</span> L'image (png) est generee a partir du canvas et affichee dans le cadre plus bas par codage en imageURL: la sauvegarde de l'image sera alors possible par clic droit sur l'image generee</li>
+</ul>
+</div>
+</div>
+
+ </body>

@@ -1,0 +1,41 @@
+div.ficheForm{
+    //text-align: right;
+	font-family: verdana;
+	font-size: 10px;
+	color: darkblue;
+    width: 340px;
+	/*background: rgba(70,130,120,1);*/
+	/*background: rgba(255,255,255,0.8);*/
+	//background: rgba(12,120,12,0.75);
+	border: 1px solid black;
+    /*border: 1px solid #088A08;*/
+	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+	border-radius: 5px;
+}
+div.formContent{
+    position:relative;
+    height: 208px;
+    left: 10px;
+}
+label._sp_class_label{
+    display: block;
+	width: 60px;
+	float: left;
+	font-weight: bold;
+	font-size: 9px;
+	color: darkblue;
+}
+input.inputForm {
+    width: 60px;
+    font-family: verdana;
+	font-size: 10px;
+}
+textarea.textareaForm {
+    font-family: verdana;
+	font-size: 10px;
+}
+input{
+    //width: 90px;
+    font-family: verdana;
+	font-size: 8px;
+}

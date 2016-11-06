@@ -1,0 +1,181 @@
+#_sp_div_contentrule {
+	text-align: left;
+	font-size: 11px;
+	font-family: verdana;
+}
+
+#_sp_form_configMenu {
+	
+	left: 15px;
+	text-align: left;
+	font-family: verdana;
+	font-size: 12px;
+	z-Index: 1000;
+	color: darkred;
+	width: 450px;
+	/*background: rgba(70,130,120,1);*/
+	/*background: rgba(255,255,255,0.8);*/
+	background: rgba(12,120,12,0.75);
+	border: 1px solid black;
+    /*border: 1px solid #088A08;*/
+	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+	border-radius: 5px;
+}
+
+#_sp_div_rule{
+	position: absolute;
+	width: 400px;
+	font-size: 13px;
+	font-family: verdana;
+	top: 8px;
+	border : 1px solid #088A08;
+	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+	background: white;
+	text-align: center;
+	left: 800px;
+	z-Index: 1001;
+}
+
+#_sp_div_editZone{
+	font-weight: normal;
+	font-size: 12px;
+	font-family: verdana;
+	color: white;
+	text-align: left;
+	border: 1px solid black;
+	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+	background: rgba(12,120,12,0.75);
+	width: 200px;
+	height: 150px;
+	position: absolute;
+	z-Index: 1002;
+	border-radius: 1px 25px 25px 25px;
+}
+h3{
+	font-weight: bold;
+	font-size: 14px;
+	color: rgba(12,120,12,0.75);
+	font-family: verdana;
+	text-align: left;
+}
+/*Sliders pour le menu de parametrage*/
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: silver;
+  border-radius: 3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: silver;
+  border: 0.2px solid #010101;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background:  white;
+  border: 0.2px solid #010101;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 25px;
+  width: 8px;
+  border-radius: 3px;
+  background: #777A74;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -14px;
+}
+
+label._sp_class_label{
+	display: block;
+	width: 180px;
+	float: left;
+	font-weight: bold;
+	font-size: 11px;
+	color: white;
+}
+label._sp_class_labelEditPl{
+	display: block;
+	width: 70px;
+	float: left;
+	
+}
+
+div._sp_class_container {
+	position: relative;
+	top : 0px;
+	font-size: 12px;
+}
+
+input._sp_class_center{
+	position: relative;
+	left: 40%;
+
+}
+
+_sp_class_formEditPlayer{
+	font-weight: normal;
+	font-size: 12px;
+	font-family: verdana;
+	text-align: left;
+}
+
+input._sp_class_right{
+	position: relative;
+	left: 60%; 
+} 
+
+span._sp_class_center{
+	position: relative;
+	left: 35%;
+	text-align: center;
+	font-weight: bold;
+}
+
+span.result{
+	color: blue;
+}
+
+span._sp_class_obj {
+	text-align: center;
+	font-weight: bold;
+	font-size: 12px;
+	font-family: verdana;
+}
+
+span._sp_class_link {
+	text-align: left;
+	font-style: italic;
+	font-weight: bold;
+	color:blue;
+	font-size: 12px;
+	font-family: verdana;
+}
+a._sp_class_link{
+	color:darkred;	
+}
+
+span._sp_class_imp {
+	vertical-align: middle;
+	font-style: italic;
+	font-size: 12px;
+	color:red;
+}

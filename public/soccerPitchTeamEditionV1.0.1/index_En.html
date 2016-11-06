@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>foot_pitch</title>
+<link rel="stylesheet" type="text/css" href="soccerPitch.css" media="all"/>
+<script type="text/javascript" src="soccerPitch_En.js"></script>
+<script src="jscolor.js"></script>
+<script type="text/javascript">
+window.onload=function () {
+    var pitch=null;
+	var properties={
+				              					//Largeur de l'image representant le terrain (en pixels)
+				//rateHW: 1.3,              					//rapport Hauteur(Longueur)/largeur du terrain
+															//==> hauteur=width*rateHW
+				widthIRL:60,              					//Largeur standard et reelle du terrain en m 
+															//==> permet de recreer l'echelle
+				playerSize:16,								//Taille des joueurs en px			 
+															//Types possibles de representation:
+				type: fullPitch,						    //halfPitch		  :  1 demi-terrain, 
+															//fullPitch :  1 grand terrain 
+				textStyle:"Bold italic 11px Verdana"		//
+				};
+	
+	pitch=new soccerPitch(properties);
+	pitch.draw();
+}
+</script>
+</head>
+ <body>
+</body>
+</html>

@@ -1,0 +1,20 @@
+doctype html
+html
+    head
+        title #{title}
+        meta(name='viewport', content='initial-scale=1,maximum-scale=1,user-scalable=no')
+    body
+        div#login(class='ficheForm')
+            div(class='formContent')
+                h3 Se Connecter à la page de composition d'Equipe
+                form(id='formLogin', action='/auth',method='post')
+                    label(class='_sp_class_label', for='username') username: 
+                    input(class='inputForm', id='username', name='username', type='text', value='#{user}')
+                    br
+                    label(class='_sp_class_label', for='password') password: 
+                    input(class='inputForm', id='password', name='password', type='password', value='#{pass}')
+                    br
+                    input(class='inputForm', id='submit_login', type='submit', value='connecter')
+        br
+        a(href='/signin') Inscrivez-vous ici gratuitement si vous n'avez pas encore de compte
+        div#result
