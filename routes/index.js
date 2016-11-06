@@ -3,7 +3,14 @@ var bcrypt = require ('bcryptjs') ;
 var mongoose = require('mongoose');
 var sess;
 // Mongoose connection to MongoDB
-mongoose.connect('mongodb://172.30.24.187:27017/db_Mapping', function (error) {
+//provide a sensible default for local development
+mongodb_connection_string = 'mongodb://127.0.0.1:27017/db_Mapping';
+//take advantage of openshift env vars when available:
+if(process.env.OPENSHIFT_MONGODB_DB_URL){
+  mongodb_connection_string = process.env.OPENSHIFT_MONGODB_DB_URL + 'db_Mapping';
+}
+
+mongoose.connect(mongodb_connection_string, function (error) {
     if (error) {
         console.log(error);
     }
